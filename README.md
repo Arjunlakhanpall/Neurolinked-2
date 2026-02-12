@@ -109,6 +109,3 @@ Please add a `LICENSE` file and include proper citations for ZuCo and related pa
 To run a full demo on your machine or cloud, follow `DESIGN.md`. I can also:
 - generate a high-fidelity PNG architecture diagram, or  
 - create Terraform templates for S3 + IAM + EC2 deployment.
-
-Tell me which and I’ll add it.
-# Neurolinked-2
