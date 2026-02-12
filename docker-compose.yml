@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    image: mind-to-script:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_S3_URI=${MODEL_S3_URI:-}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+    volumes:
+      - ./app:/home/appuser/app:cached
+      - ./models:/home/appuser/app/models
+    device_requests:
+      - driver: nvidia
+        count: -1
+        capabilities: ["gpu"]
+    restart: unless-stopped
+  example:
+    image: mind-to-script:latest
+    build: .
+    environment:
+      - MODEL_S3_URI=${MODEL_S3_URI:-}
+      - MODEL_DIR=/home/appuser/app/models
+      - RUN_EXAMPLE=1
+    volumes:
+      - ./models:/home/appuser/app/models
+      - ./scripts:/home/appuser/app/scripts:ro
+    # Allow GPU when available; on non-GPU hosts this will be ignored
+    device_requests:
+      - driver: nvidia
+        count: -1
+        capabilities: ["gpu"]
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["./entrypoint.sh"]
+    restart: "no"
+
