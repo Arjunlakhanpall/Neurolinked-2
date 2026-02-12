@@ -1,0 +1,2 @@
+file,path,n_channels,n_samples,sfreq,duration_s,n_sentences,n_words_total
+subj_synth_file1.pkl,data\canonical\subj_synth_file1.pkl,8,1000,500.0,2.0,1,2
