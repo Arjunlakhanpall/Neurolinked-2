@@ -87,17 +87,6 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 * `DESIGN.md`: Full architecture runbook and cloud deployment guide.
 
 ---
-
-## Visuals
-
-Model architecture and workflow diagrams (see repo root):
-
-![EEG to Text Model Overview](./eeg-to-text-translation-a-model-for-deciphering-human-brain-activity-2.png)
-
-![EEG2Text: Open-Vocabulary / Pretraining](./eeg2text-open-vocabulary-eeg-to-text-decoding-with-eeg-pre-training-and-multi-view-transformer-1.png)
-
----
-
 ## Contributing, license & citations
 
 Please add a `LICENSE` file and include proper citations for ZuCo and related papers when using this dataset. For contributions, follow the CI checks in `.github/workflows/ci.yml`.
@@ -199,5 +188,3 @@ Client (EEG device) -> API (/infer) -> Preprocess (MNE: filter, ICA) -> Epoching
 ```
 
 Visual assets (already included) show the model internals. If you want a high-fidelity PNG flowchart, I can generate one and add it to the repo.
-
-# Neurolinked-2
